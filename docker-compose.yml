@@ -39,7 +39,7 @@ services:
       - zammad-nginx
 
   zammad-init:
-    image: ghcr.io/zammad/zammad:latest
+    image: ghcr.io/zammad/zammad:7.0.1-0058
     command: ["zammad-init"]
     environment: &zammad-env
       - POSTGRESQL_USER=zammad
@@ -55,7 +55,7 @@ services:
         condition: service_healthy
 
   zammad-railsserver:
-    image: ghcr.io/zammad/zammad:latest
+    image: ghcr.io/zammad/zammad:7.0.1-0058
     command: ["zammad-railsserver"]
     environment: *zammad-env
     depends_on:
@@ -63,7 +63,7 @@ services:
         condition: service_completed_successfully
 
   zammad-scheduler:
-    image: ghcr.io/zammad/zammad:latest
+    image: ghcr.io/zammad/zammad:7.0.1-0058
     command: ["zammad-scheduler"]
     environment: *zammad-env
     depends_on:
@@ -71,7 +71,7 @@ services:
         condition: service_completed_successfully
 
   zammad-websocket:
-    image: ghcr.io/zammad/zammad:latest
+    image: ghcr.io/zammad/zammad:7.0.1-0058
     command: ["zammad-websocket"]
     environment: *zammad-env
     depends_on:
@@ -79,7 +79,7 @@ services:
         condition: service_completed_successfully
 
   zammad-nginx:
-    image: ghcr.io/zammad/zammad:latest
+    image: ghcr.io/zammad/zammad:7.0.1-0058
     command: ["zammad-nginx"]
     environment: *zammad-env
     depends_on:
