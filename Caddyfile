@@ -1,0 +1,4 @@
+localhost {
+    tls internal
+    reverse_proxy zammad-nginx:8080
+}
