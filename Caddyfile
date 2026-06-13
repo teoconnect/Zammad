@@ -1,3 +1,13 @@
+# Modifica 'tuodominio.com' con il tuo dominio reale o indirizzo IP.
+# L'opzione 'tls internal' forza Caddy ad usare un certificato auto-firmato.
+# Per usare Let's Encrypt, basta rimuovere 'tls internal'.
+
+tuodominio.com {
+    tls internal
+    reverse_proxy zammad-nginx:8080
+}
+
+# Mantengo il localhost per retrocompatibilità/test locali.
 localhost {
     tls internal
     reverse_proxy zammad-nginx:8080
